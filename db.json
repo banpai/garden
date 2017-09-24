@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "lowdb is awesome"
+    },
+    {
+      "id": 1,
+      "title": "lowdb is awesome"
+    }
+  ],
+  "user": {
+    "name": "typicode"
+  },
+  "progressData": [
+    {
+      "title": "小程序",
+      "name": "2-1",
+      "id": "1"
+    },
+    {
+      "title": "ruff",
+      "name": "2-2",
+      "id": "2"
+    },
+    {
+      "title": "Egret",
+      "name": "2-3",
+      "id": "3"
+    }
+  ]
+}

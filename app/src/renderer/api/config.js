@@ -1,3 +1,3 @@
 export const commonParams = {
-    username: 'bp'
+  username: 'bp'
 }

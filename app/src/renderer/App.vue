@@ -5,6 +5,7 @@
         <left-bar></left-bar>
       </Col>
       <Col span="20" class="container">
+      菜单是的都是
         <keep-alive>
           <router-view></router-view>
         </keep-alive>

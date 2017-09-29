@@ -65,6 +65,7 @@
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "mocha": "^3.0.2",
+    "lowdb": "^1.0.0",
     "require-dir": "^0.3.0",
     "spectron": "^3.4.0",
     "style-loader": "^0.13.1",

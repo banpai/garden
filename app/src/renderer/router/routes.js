@@ -1,34 +1,28 @@
-const Login = resolve => {
-  import('@/views/login').then(module => {
+const CodeSearch = resolve => {
+  import('@/views/code/codeSearch').then(module => {
     resolve(module)
   })
 }
 
-const Index = resolve => {
-  import('@/views/index/index').then(module => {
+const PrograssEdit = resolve => {
+  import('@/views/prograssedit/prograssEdit').then(module => {
     resolve(module)
   })
 }
 
-const Folder = resolve => {
-  import('@/views/files/folder').then(module => {
-    resolve(module)
-  })
-}
 const routes = [
   {
-    path: '/computer',
-    name: 'index',
-    component: Index,
-    children: [{
-      path: '/computer/:id',
-      name: 'folder',
-      component: Folder
-    }]
-  }, {
     path: '/',
-    name: 'login',
-    component: Login
+    name: 'codesearch',
+    component: CodeSearch
+  }, {
+    path: '/codesearch',
+    name: 'codesearch',
+    component: CodeSearch
+  }, {
+    path: '/prograssEdit',
+    name: 'prograssEdit',
+    component: PrograssEdit
   },
   {
     path: '*',

@@ -1,13 +1,15 @@
 <template>
   <div class="left-bar"> 
-    <Menu :theme="theme2" active-name="1-2" :open-names="['1','2']" class="left-menu" style="width: 100%;">
+    <Menu active-name="1-2" :open-names="['1','2']" class="left-menu" style="width: 100%;">
         <Submenu name="1">
             <template slot="title">
                 <Icon type="ios-paper"></Icon>
                 代码管理
             </template>
-            <MenuItem name="1-1">搜索管理</MenuItem>
-            <MenuItem name="1-2">增加代码</MenuItem>
+            <MenuItem name="1-1" @:click="cgname">搜索管理</MenuItem>
+            <MenuItem name="1-2">
+              <div v-on:click="cgname">增加代码</div>
+            </MenuItem>
             <MenuItem name="1-3">举报管理</MenuItem>
         </Submenu>
         <Submenu name="2">
@@ -15,8 +17,15 @@
                 <Icon type="stats-bars"></Icon>
                 项目管理
             </template>
-            <MenuItem  v-for="item in progressData" v-bind:name="item.name">{{ item.title }}</MenuItem>
+            <MenuItem  v-for="item in progressData" v-bind:name="item.name" >{{ item.title }}</MenuItem>
         </Submenu>
+        <router-link tag="div" class="mine" to="/codesearch">
+          ddddddddsddsdfffffffff
+        </router-link>
+        <router-link tag="div" class="mine" to="/prograssEdit">
+          ddddddddsddsdfffffffff
+        </router-link>
+        <div v-on:click="cgname">ddddddd</div>
     </Menu>
    </div>
 </template>
@@ -46,6 +55,12 @@
       console.log(progressData)
       return {
         progressData: progressData
+      }
+    },
+    // 在 `methods` 对象中定义方法
+    methods: {
+      cgname: function (event) {
+        console.log('event')
       }
     },
     init: function () {

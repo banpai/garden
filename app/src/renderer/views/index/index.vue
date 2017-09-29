@@ -4,13 +4,10 @@
       <left-bar></left-bar>
     </Col>
     <Col span="20" class="container">
-      <code-search></code-search>
-      <prograss-edit></prograss-edit>
       <transition name="app">
         <keep-alive>
           <router-view></router-view>
         </keep-alive>
-        
       </transition>
     </Col>
   </Row>

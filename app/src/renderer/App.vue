@@ -1,14 +1,25 @@
 <template>
   <div id="app">
-    <keep-alive>
-      <router-view></router-view>
-    </keep-alive>
+   <Row class="wrapper">
+      <Col span="4" class="left" style="height: 100%;">
+        <left-bar></left-bar>
+      </Col>
+      <Col span="20" class="container">
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
+      </Col>
+    </Row>
   </div>
 </template>
 
 <script>
+  import LeftBar from '@/views/siderBar/leftBar'
   export default {
-    name: 'app'
+    name: 'app',
+    components: {
+      LeftBar
+    }
   }
 </script>
 
@@ -28,10 +39,11 @@
   html, body {
     height: 100%;
   }
+
   #app {
     height: 100%;
   }
-    /* 设置滚动条的样式 */
+  /* 设置滚动条的样式 */
 
   ::-webkit-scrollbar {
     width: 1px;
@@ -52,5 +64,18 @@
 
   ::-webkit-scrollbar-thumb:window-inactive {
     background: #dddee1;
+  }
+  .wrapper{
+    height: 100%;
+  }
+  .left-bar {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    .left-menu{
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+    }
   }
 </style>

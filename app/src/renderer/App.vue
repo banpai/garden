@@ -78,4 +78,41 @@
       overflow-y: auto;
     }
   }
+  .fade-enter-active,
+.fade-leave-active {
+  transition: opacity .4s
+}
+.fade-enter,
+.fade-leave {
+  opacity: 0
+}
+.wrapper {
+  height: 100%;
+  overflow-y: auto;
+  .left{
+      border: 1px solid;
+  }
+}
+.ivu-col-span-6 {
+  height: 100%;
+}
+.header {
+  padding: 10px;
+  header {
+    font: bold 20px/150% 'Microsoft Yahei';
+  }
+}
+.container {
+  position: relative;
+  height: 100%;
+  .footer-bread {
+    position: fixed;
+    left: 26%;
+    top: 10px;
+    z-index: 100;
+  }
+}
+.ivu-table-wrapper {
+  border: none !important;
+}
 </style>

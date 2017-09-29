@@ -10,15 +10,25 @@ const PrograssEdit = resolve => {
   })
 }
 
+const AddCode = resolve => {
+  import('@/views/code/addCode').then(module => {
+    resolve(module)
+  })
+}
+
 const routes = [
   {
     path: '/',
-    name: 'codesearch',
+    name: 'codeSearch',
     component: CodeSearch
   }, {
-    path: '/codesearch',
-    name: 'codesearch',
+    path: '/codeSearch',
+    name: 'codeSearch',
     component: CodeSearch
+  }, {
+    path: '/addCode',
+    name: 'addCode',
+    component: AddCode
   }, {
     path: '/prograssEdit',
     name: 'prograssEdit',

@@ -1,67 +1,66 @@
 <template>
   <div class="left-bar"> 
-    <Menu active-name="1-2" :open-names="['1','2']" class="left-menu" style="width: 100%;">
+    <Menu :theme="theme3" :active-name="name"  @on-select="cgname" :open-names="['1','2']" class="left-menu" style="width: 100%;">
         <Submenu name="1">
             <template slot="title">
                 <Icon type="ios-paper"></Icon>
                 代码管理
             </template>
-            <MenuItem name="1-1" @:click="cgname">搜索管理</MenuItem>
-            <MenuItem name="1-2">
-              <div v-on:click="cgname">增加代码</div>
+            <MenuItem name="1-1">
+                搜索代码
             </MenuItem>
-            <MenuItem name="1-3">举报管理</MenuItem>
+            <MenuItem name="1-2">
+                增加代码
+            </MenuItem>
         </Submenu>
         <Submenu name="2">
             <template slot="title">
                 <Icon type="stats-bars"></Icon>
                 项目管理
             </template>
-            <MenuItem  v-for="item in progressData" v-bind:name="item.name" >{{ item.title }}</MenuItem>
+            <MenuItem  v-for="item in progressData" v-bind:name="item.name">
+                {{ item.title }}
+            </MenuItem>
         </Submenu>
-        <router-link tag="div" class="mine" to="/codesearch">
-          ddddddddsddsdfffffffff
-        </router-link>
-        <router-link tag="div" class="mine" to="/prograssEdit">
-          ddddddddsddsdfffffffff
-        </router-link>
-        <div v-on:click="cgname">ddddddd</div>
     </Menu>
    </div>
 </template>
 <script>
+  import {getdata} from '@/api/leftbar'
   export default {
     data () {
-      const low = require('lowdb')
-      const FileSync = require('lowdb/adapters/FileSync')
-      const adapter = new FileSync('db.json')
-      const db = low(adapter)
-      // setsome defaults
-      // db.defaults({ progressData: [{ title: '小程序', name: '2-1', id: '1' }] })
-      //   .write()
-
-      // Add a post
-      // db.get('progressData')
-      //    .push({ title: 'Egret', name: '2-3', id: '3' })
-      //    .write()
-
-      // remove a post
-      // db.get('progressData').remove({ title: '小程序' }).write()
-
-      // // Set a user using Lodash shorthand syntax
-      // db.set('user.name', 'typicode')
-      //   .write()
-      var progressData = db.get('progressData').value()
-      console.log(progressData)
       return {
-        progressData: progressData
+        progressData: [],
+        name: '1-1',
+        theme3: 'light'
       }
     },
     // 在 `methods` 对象中定义方法
     methods: {
-      cgname: function (event) {
-        console.log('event')
+      onselect: function (n) {
+        console.log(n)
+      },
+      cgname: function (n) {
+        console.log()
+        let num = n.split('-')
+        if (num[0] === '1') {
+          if (num[1] === '1') {
+            // 跳转导航
+            this.$router.push('codeSearch')
+          } else if (num[1] === '2') {
+            this.$router.push('addCode')
+          }
+        } else if (num[0] === '2') {
+          // 跳转导航
+          this.$router.push('prograssEdit')
+        }
+      },
+      _getdata: function () {
+        this.progressData = getdata()
       }
+    },
+    created () {
+      this._getdata()
     },
     init: function () {
       console.log('d')

@@ -18,10 +18,6 @@ const AddCode = resolve => {
 
 const routes = [
   {
-    path: '/',
-    name: 'codeSearch',
-    component: CodeSearch
-  }, {
     path: '/codeSearch',
     name: 'codeSearch',
     component: CodeSearch
@@ -36,7 +32,7 @@ const routes = [
   },
   {
     path: '*',
-    redirect: '/computer'
+    redirect: '/codeSearch'
   }
 ]
 

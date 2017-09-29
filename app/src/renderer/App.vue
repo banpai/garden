@@ -42,6 +42,7 @@
 
   #app {
     height: 100%;
+    min-width: 910px;
   }
   /* 设置滚动条的样式 */
 

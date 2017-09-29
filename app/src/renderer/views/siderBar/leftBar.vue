@@ -46,13 +46,18 @@
         if (num[0] === '1') {
           if (num[1] === '1') {
             // 跳转导航
-            this.$router.push('codeSearch')
+            this.$router.replace('codeSearch')
           } else if (num[1] === '2') {
-            this.$router.push('addCode')
+            this.$router.replace('addCode')
           }
         } else if (num[0] === '2') {
           // 跳转导航
-          this.$router.push('prograssEdit')
+          this.$router.replace({
+            name: 'prograssEdit',
+            params: {
+              num: num[1]
+            }
+          })
         }
       },
       _getdata: function () {

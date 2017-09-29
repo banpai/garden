@@ -8,6 +8,10 @@
     props: {},
     data () {
       return {}
+    },
+    created: function () {
+      console.log('d')
+      console.log(this.$route.params)
     }
   }
 </script>
